@@ -62,3 +62,4 @@ config-local.json
 *.mmdb
 *.log
 .idea/
+.DS_Store
