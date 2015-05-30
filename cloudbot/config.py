@@ -53,19 +53,9 @@ class Config(dict):
             self.observer.stop()
 
     def load_config(self):
-        """(re)loads the bot config from the config file"""
-        if not os.path.exists(self.path):
-            # if there is no config, show an error and die
-            logger.critical("No config file found, bot shutting down!")
-            print("No config file found! Bot shutting down in five seconds.")
-            print("Copy 'config.default.json' to 'config.json' for defaults.")
-            print("For help, see http://git.io/cloudbotirc. Thank you for using CloudBot!")
-            time.sleep(5)
-            sys.exit()
-
-        with open(self.path) as f:
-            self.update(json.load(f))
-            logger.debug("Config loaded from file.")
+        
+        self.update(json.loads(os.environ['BOTCONFIG']))
+        logger.debug("Config loaded from environment.")
 
         # reload permissions
         if self.bot.connections:
