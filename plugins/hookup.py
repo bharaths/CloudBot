@@ -4,7 +4,7 @@ import time
 from cloudbot import hook
 
 rooms = ["courtyard", "guest house", "observatory", "theatre", "drawing room", "garage", "spa", "master bedroom", "studio", "pool", "arcade", "beach house", "surf shop", "kitchen", "ballroom", "conservatory", "billiard room", "library", "study", "hallway", "lounge", "dining room", "cellar"]
-weapons = ["a candlestick","an axe", "a pistol", "rope", "gloves", "a horseshoe", "a knife", "a baseball bat", "a chalice", "a dumbbell", "a wrench", "a trophy", "a pipe", "garden shears"]
+weapons = ["a rotimatic", "a dhokla", "whipped cream", "garam masala", "gloves", "a pie", "an oatmeal chocolate chip cookie", "a kale smoothie", "cultural appropriation", "a white guy", "tennis elbow", "reeboks"]
 
 bitesyns = ["bites", "nips", "nibbles", "chomps", "licks", "teases", "chews", "gums", "tastes"]
 bodyparts = ["cheeks", "ear lobes", "nipples", "nose", "neck", "toes", "fingers", "butt", "taint", "thigh", "grundle", "tongue", "calf", "nurses", "nape"]
