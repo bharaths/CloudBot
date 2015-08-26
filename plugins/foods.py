@@ -65,7 +65,7 @@ def load_foods(bot):
     """
     :type bot: cloudbot.bot.CloudBot
     """
-    global sandwich_data, taco_data, coffee_data, noodles_data, muffin_data, tea_data, mirchi_data, dhokla_data, pizza_data
+    global sandwich_data, taco_data, coffee_data, noodles_data, muffin_data, tea_data, mirchi_data, dhokla_data, pizza_data, chaat_data
 
     with codecs.open(os.path.join(bot.data_dir, "sandwich.json"), encoding="utf-8") as f:
         sandwich_data = json.load(f)
@@ -93,6 +93,9 @@ def load_foods(bot):
 
     with codecs.open(os.path.join(bot.data_dir, "tea.json"), encoding="utf-8") as f:
         tea_data = json.load(f)
+
+    with codecs.open(os.path.join(bot.data_dir, "chaat.json"), encoding="utf-8") as f:
+        chaat_data = json.load(f)
 
 @asyncio.coroutine
 @hook.command
@@ -288,3 +291,19 @@ def mirchi(text, conn, nick, notice, action):
                                       variables={"user": target})
     # act out the message
     action(generator.generate_string())
+
+
+@asyncio.coroutine
+@hook.command
+def chaat(text, action):
+    """<user> - make chaat for <user>"""
+    user = text.strip()
+
+    if not is_valid(user):
+        return "I can't make chaat for that user."
+
+    generator = textgen.TextGenerator(pizza_data["templates"], chaat_data["parts"],
+                                          variables={"user": user})
+    # act out the message
+    action(generator.generate_string())
+
