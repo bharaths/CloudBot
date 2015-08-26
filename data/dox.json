@@ -1,28 +1,30 @@
 {
   "templates": [
-    "{user} is a {profession} from {location}, who has {fact}!"
+    "{user} is {profession} from {location}, who has {fact}!"
   ],
   "parts": {
       "profession": [
-			"underwater basket weaver",
-			"pole dancer",
-			"chimney sweeper",
-			"pet food taster",
-			"whiskey ambassador",
-			"bad breath smeller",
-			"hair boiler",
-			"crocodile wrangler",
-			"fortune cookie writer",
-			"Joseph Gordon-Levitt stalker",
-			"professional whistler",
-			"snake milker",
-			"rodeo clown",
-			"chicken sexer",
-			"ostrich babysitter",
-			"weed farmer",
-			"adult store attendant",
-			"cultural appropriator",
-			"professional assasin"
+			"an underwater basket weaver",
+			"a pole dancer",
+			"a chimney sweeper",
+			"a pet food taster",
+			"a whiskey ambassador",
+			"a bad breath smeller",
+			"a hair boiler",
+			"a crocodile wrangler",
+			"a fortune cookie writer",
+			"a Joseph Gordon-Levitt stalker",
+			"a professional whistler",
+			"a snake milker",
+			"a rodeo clown",
+			"a chicken sexer",
+			"an ostrich babysitter",
+			"a weed farmer",
+			"an adult store attendant",
+			"a cultural appropriator",
+			"a professional assasin",
+			"an exotic Bollywood dancer",
+			"a One Direction fan"
 		],
   "location": [
       "Abu Dhabi",
