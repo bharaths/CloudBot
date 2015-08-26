@@ -57,6 +57,9 @@ def load_attacks(bot):
     
     with codecs.open(os.path.join(bot.data_dir, "funday.json"), encoding="utf-8") as fData:
         funday_data = json.load(fData)
+        
+    with codecs.open(os.path.join(bot.data_dir, "dox.json"), encoding="utf-8") as fData:
+        dox_data = json.load(fData)
 
 
 @asyncio.coroutine
