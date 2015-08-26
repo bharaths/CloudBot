@@ -302,7 +302,7 @@ def chaat(text, action):
     if not is_valid(user):
         return "I can't make chaat for that user."
 
-    generator = textgen.TextGenerator(pizza_data["templates"], chaat_data["parts"],
+    generator = textgen.TextGenerator(chaat_data["templates"], chaat_data["parts"],
                                           variables={"user": user})
     # act out the message
     action(generator.generate_string())
