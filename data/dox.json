@@ -1,0 +1,68 @@
+{
+  "templates": [
+    "{user} is a {profession} from {location}, who has {fact}!"
+  ],
+  "parts": {
+      "profession": [
+			"underwater basket weaver",
+			"pole dancer",
+			"chimney sweeper",
+			"pet food taster",
+			"whiskey ambassador",
+			"bad breath smeller",
+			"hair boiler",
+			"crocodile wrangler"
+			"fortune cookie writer",
+			"Joseph Gordon-Levitt stalker",
+			"professional whistler",
+			"snake milker",
+			"rodeo clown",
+			"chicken sexer",
+			"ostrich babysitter",
+			"weed farmer",
+			"adult store attendant"
+		],
+  "location": [
+      "Abu Dhabi",
+      "Roswell",
+      "Los Alamos",
+      "Rennes-le-Château",
+      "Monowi",
+      "The Hamptons",
+      "Pacific Palisades"
+      "The Bronx",
+      "Upper Darby",
+      "Beijing",
+      "Bethesda",
+      "Nairobi",
+      "Dubuque",
+      "Des Moines",
+      "Iowa City",
+      "Cedar Rapids",
+      "Ames",
+      "Hell",
+      "Fucking, Austria",
+      "Condom, France",
+      "Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch",
+      "Portland"
+    ],
+    "fact":[
+      "a lot of credit card debt",
+      "ten poisonous snakes",
+      "too many Desi relatives",
+      "a lot of white guy friends ;)",
+      "a knack for cultural appropriation",
+      "donated a lot of money to the Bobby Jindal 2016 campaign",
+      "insider connections to Nikki Haley",
+      "created an app to match Desi grills with white guys",
+      "married a Gujju",
+      "a totally exotic sari",
+      "hosted 15 PSL parties around the world",
+      "successfully aligned their chakras",
+      "become a monk in the Himalayas",
+      "made dank memes all day",
+      "blazed it",
+      "killed HitchBot"
+    ]
+  }
+}

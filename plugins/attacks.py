@@ -32,7 +32,7 @@ def load_attacks(bot):
     """
     :type bot: cloudbot.bot.CloudBot
     """
-    global larts, flirts, kills, slaps, north_korea, insults, basic_data, funday_data
+    global larts, flirts, kills, slaps, north_korea, insults, basic_data, funday_data, dox_data
 
     with codecs.open(os.path.join(bot.data_dir, "larts.txt"), encoding="utf-8") as f:
         larts = [line.strip() for line in f.readlines() if not line.startswith("//")]
@@ -57,6 +57,9 @@ def load_attacks(bot):
     
     with codecs.open(os.path.join(bot.data_dir, "funday.json"), encoding="utf-8") as fData:
         funday_data = json.load(fData)
+        
+    with codecs.open(os.path.join(bot.data_dir, "dox.json"), encoding="utf-8") as fData:
+        dox_data = json.load(fData)
 
 
 @asyncio.coroutine
@@ -202,6 +205,26 @@ def basic(text, conn, nick, notice, action):
     
     generator = textgen.TextGenerator(basic_data["templates"], basic_data["parts"],
                                         variables={"user": target})
+
+    # act out the message
+    action(generator.generate_string())
+
+@asyncio.coroutine
+@hook.command()
+def dox(text, conn, nick, notice, action):
+    """<user> - doxxes <user>
+    :type text: str
+    :type conn: cloudbot.client.Client
+    :type nick: str
+    """
+    target = text.strip()
+
+    if " " in target:
+        notice("Invalid username!")
+        return
+
+    generator = textgen.TextGenerator(dox_data["templates"], dox_data["parts"],
+                                      variables={"user": target})
 
     # act out the message
     action(generator.generate_string())
