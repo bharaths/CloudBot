@@ -208,11 +208,11 @@ def basic(text, conn, nick, notice, action):
 
     # act out the message
     action(generator.generate_string())
-    
+
 @asyncio.coroutine
 @hook.command()
 def dox(text, conn, nick, notice, action):
-    """<user> - dox a <user>
+    """<user> - doxxes <user>
     :type text: str
     :type conn: cloudbot.client.Client
     :type nick: str
