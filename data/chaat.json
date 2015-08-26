@@ -1,0 +1,43 @@
+{
+  "templates": [
+    "makes {user} {quality} {type} with {ingredient}, {ingredient}, {ingredient} , {topping} , {topping} and {topping}!",
+    "makes {user} {quality} {type} with {ingredient}, {ingredient},  {topping} and {topping}!",
+    "makes {user} {quality} {type} with {ingredient}, {ingredient},  {topping} and {topping}!",
+    ],
+  "parts": {
+    "type": [
+      "bhel puri",
+      "pani puri",
+      "sev puri",
+      "dahi puri",
+      "aloo chaat",
+      "ragda patties",
+      "pav bhaji",
+      "masala puri"
+    ],
+    "quality": [
+      "spicy",
+      "xtra peshal",
+      "mild",
+      "medium",
+      "savory"
+    ],
+    "ingredient": [
+      "potaotes",
+      "puris",
+      "tomatoes",
+      "onions",
+      "boiled peas",
+      "sev",
+      "carrots"
+    ],
+    "topping": [
+      "fresh crispy sev",
+      "extra sev",
+      "coriander (not cilantro)",
+      "extra onions",
+      "bhaiyya thoda extra chutney",
+      "extra chaat masala" 
+    ]
+  }
+}
