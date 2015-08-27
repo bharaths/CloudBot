@@ -32,7 +32,7 @@ def load_attacks(bot):
     """
     :type bot: cloudbot.bot.CloudBot
     """
-    global larts, flirts, kills, slaps, north_korea, insults, basic_data, funday_data, dox_data
+    global larts, flirts, kills, slaps, north_korea, insults, basic_data, funday_data, dox_data, dils
 
     with codecs.open(os.path.join(bot.data_dir, "larts.txt"), encoding="utf-8") as f:
         larts = [line.strip() for line in f.readlines() if not line.startswith("//")]
@@ -61,6 +61,8 @@ def load_attacks(bot):
     with codecs.open(os.path.join(bot.data_dir, "dox.json"), encoding="utf-8") as fData:
         dox_data = json.load(fData)
 
+    with codecs.open(os.path.join(bot.data_dir, "dils.txt"), encoding="utf-8") as f:
+        dils = [line.strip() for line in f.readlines() if not line.startswith("//")]
 
 @asyncio.coroutine
 @hook.command
@@ -228,3 +230,19 @@ def dox(text, conn, nick, notice, action):
 
     # act out the message
     action(generator.generate_string())
+    
+    
+@asyncio.coroutine
+@hook.command("dil", "pyaar")
+def dil(text, conn, nick, message):
+    """<user> - dils with <user>"""
+    target = text.strip()
+
+    if not is_valid(target):
+        return "I can't dil that."
+
+    if is_self(conn, target):
+        # user is trying to make the bot attack itself!
+        target = nick
+
+    message('{}, {}'.format(target, random.choice(dils)))
