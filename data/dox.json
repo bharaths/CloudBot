@@ -1,26 +1,30 @@
 {
   "templates": [
-    "{user} is a {profession} from {location}, who has {fact}!"
+    "{user} is {profession} from {location}, who has {fact}!"
   ],
   "parts": {
       "profession": [
-			"underwater basket weaver",
-			"pole dancer",
-			"chimney sweeper",
-			"pet food taster",
-			"whiskey ambassador",
-			"bad breath smeller",
-			"hair boiler",
-			"crocodile wrangler",
-			"fortune cookie writer",
-			"Joseph Gordon-Levitt stalker",
-			"professional whistler",
-			"snake milker",
-			"rodeo clown",
-			"chicken sexer",
-			"ostrich babysitter",
-			"weed farmer",
-			"adult store attendant"
+			"an underwater basket weaver",
+			"a pole dancer",
+			"a chimney sweeper",
+			"a pet food taster",
+			"a whiskey ambassador",
+			"a bad breath smeller",
+			"a hair boiler",
+			"a crocodile wrangler",
+			"a fortune cookie writer",
+			"a Joseph Gordon-Levitt stalker",
+			"a professional whistler",
+			"a snake milker",
+			"a rodeo clown",
+			"a chicken sexer",
+			"an ostrich babysitter",
+			"a weed farmer",
+			"an adult store attendant",
+			"a cultural appropriator",
+			"a professional assasin",
+			"an exotic Bollywood dancer",
+			"a One Direction fan"
 		],
   "location": [
       "Abu Dhabi",
@@ -44,7 +48,18 @@
       "Fucking, Austria",
       "Condom, France",
       "Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch",
-      "Portland"
+      "Portland",
+      "Thiruvananthapuram",
+      "Mumbai (baby let's go!)",
+      "Cuba",
+      "Kashmir",
+      "Lahore",
+      "Chennai",
+      "Bengaluru",
+      "Dhaka",
+      "Area 51",
+      "Telangana",
+      "Oregon"
     ],
     "fact":[
       "a lot of credit card debt",
@@ -62,7 +77,15 @@
       "become a monk in the Himalayas",
       "made dank memes all day",
       "blazed it",
-      "killed HitchBot"
+      "killed HitchBot",
+      "instagrammed something NOT gluten-free",
+      "written a cookbook on dhoklas",
+      "helped white people choose their spiritual name~~",
+      "pretended to be a spiritual guru",
+      "marketed 50 different types of algae water",
+      "destroyed all the gajar halwa in the world",
+      "trolled the Sunday dating thread",
+      "gotten an arranged marriage with a dreamy Punjabi guy"
     ]
   }
 }
