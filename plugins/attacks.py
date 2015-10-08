@@ -240,7 +240,7 @@ def basic(text, conn, nick, notice, action):
 
 @asyncio.coroutine
 @hook.command()
-def dox(text, conn, nick, notice, action):
+def dox(text, conn, nick, notice, message):
     """<user> - doxxes <user>
     :type text: str
     :type conn: cloudbot.client.Client
@@ -256,7 +256,7 @@ def dox(text, conn, nick, notice, action):
                                       variables={"user": target})
 
     # act out the message
-    action(generator.generate_string())
+    message(generator.generate_string())
     
     
 @asyncio.coroutine

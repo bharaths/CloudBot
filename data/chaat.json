@@ -1,8 +1,8 @@
 {
   "templates": [
-    "makes {user} {quality} {type} with {ingredient}, {ingredient}, {ingredient} , {topping} , {topping} and {topping}!",
-    "makes {user} {quality} {type} with {ingredient}, {ingredient},  {topping} and {topping}!",
-    "makes {user} {quality} {type} with {ingredient}, {ingredient},  {topping} and {topping}!"
+    "makes {user} {quality} {type} with {ingredient}, {ingredient}, {ingredient}, {topping}, {topping} and {topping}!",
+    "makes {user} {quality} {type} with {ingredient}, {ingredient}, {topping} and {topping}!",
+    "makes {user} {quality} {type} with {ingredient}, {ingredient}, {topping} and {topping}!"
     ],
   "parts": {
     "type": [
