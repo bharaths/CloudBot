@@ -65,7 +65,8 @@ def load_foods(bot):
     """
     :type bot: cloudbot.bot.CloudBot
     """
-    global sandwich_data, taco_data, coffee_data, noodles_data, muffin_data, tea_data, mirchi_data, dhokla_data, pizza_data, chaat_data
+
+    global sandwich_data, taco_data, coffee_data, noodles_data, muffin_data, tea_data, mirchi_data, dhokla_data, pizza_data, chaat_data, keto_data, beer_data, cheese_data, pancake_data
 
     with codecs.open(os.path.join(bot.data_dir, "sandwich.json"), encoding="utf-8") as f:
         sandwich_data = json.load(f)
@@ -96,6 +97,19 @@ def load_foods(bot):
 
     with codecs.open(os.path.join(bot.data_dir, "chaat.json"), encoding="utf-8") as f:
         chaat_data = json.load(f)
+
+    with codecs.open(os.path.join(bot.data_dir, "keto.json"), encoding="utf-8") as f:
+        keto_data = json.load(f)
+    
+    with codecs.open(os.path.join(bot.data_dir, "beer.json"), encoding="utf-8") as f:
+        beer_data = json.load(f)
+
+    with codecs.open(os.path.join(bot.data_dir, "cheese.json"), encoding="utf-8") as f:
+	    cheese_data = json.load(f)
+
+    with codecs.open(os.path.join(bot.data_dir, "pancake.json"), encoding="utf=8") as f:
+        pancake_data = json.load(f)
+		
 
 @asyncio.coroutine
 @hook.command
@@ -162,7 +176,7 @@ def sandwich(text, action):
     user = text.strip()
 
     if not is_valid(user):
-        return "I can't give a cookie to that user."
+        return "I can't give a sandwich to that user."
 
     generator = textgen.TextGenerator(sandwich_data["templates"], sandwich_data["parts"],
                                       variables={"user": user})
@@ -250,8 +264,18 @@ def pizza(text, action):
     if not is_valid(user):
         return "I can't give a pizza to that user."
 
-    generator = textgen.TextGenerator(pizza_data["templates"], pizza_data["parts"],
-                                      variables={"user": user})
+    generator = textgen.TextGenerator(pizza_data["templates"], pizza_data["parts"], variables={"user": user})
+
+@asyncio.coroutine
+@hook.command
+def keto(text, action):
+    """<user> - give keto food to <user>"""
+    user = text.strip()
+
+    if not is_valid(user):
+        return "I can't give food to that user."
+
+    generator = textgen.TextGenerator(keto_data["templates"], keto_data["parts"], variables={"user": user})
     # act out the message
     action(generator.generate_string())
 
@@ -304,6 +328,49 @@ def chaat(text, action):
 
     generator = textgen.TextGenerator(chaat_data["templates"], chaat_data["parts"],
                                           variables={"user": user})
+    # act out the message
+    action(generator.generate_string())
+
+@asyncio.coroutine
+@hook.command
+def beer(text, action):
+    """<user> - give beer to <user>"""
+    user = text.strip()
+
+    if not is_valid(user):
+        return "I can't give beer to that user."
+
+    generator = textgen.TextGenerator(beer_data["templates"], beer_data["parts"],
+                                      variables={"user": user})
+    # act out the message
+    action(generator.generate_string())
+
+@asyncio.coroutine
+@hook.command
+def cheese(text, action):
+    """<user> - give cheese to <user>"""
+    user = text.strip()
+
+    if not is_valid(user):
+        return "I can't give cheese to that user."
+
+    generator = textgen.TextGenerator(cheese_data["templates"], cheese_data["parts"],
+                                      variables={"user": user})
+    # act out the message
+    action(generator.generate_string())
+
+@asyncio.coroutine
+@hook.command
+def pancake(text, action):
+    """<user> - give pancakes to <user>"""
+    user = text.strip()
+
+    if not is_valid(user):
+        return "I can't give pancakes to that user."
+
+    generator = textgen.TextGenerator(pancake_data["templates"], pancake_data["parts"],
+                                      variables={"user": user})
+
     # act out the message
     action(generator.generate_string())
 

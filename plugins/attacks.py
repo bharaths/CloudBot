@@ -32,7 +32,8 @@ def load_attacks(bot):
     """
     :type bot: cloudbot.bot.CloudBot
     """
-    global larts, flirts, kills, slaps, north_korea, insults, basic_data, funday_data, dox_data, dils
+
+    global larts, flirts, kills, slaps, north_korea, insults, basic_data, funday_data, dox_data, dils, strax
 
     with codecs.open(os.path.join(bot.data_dir, "larts.txt"), encoding="utf-8") as f:
         larts = [line.strip() for line in f.readlines() if not line.startswith("//")]
@@ -48,6 +49,9 @@ def load_attacks(bot):
 
     with codecs.open(os.path.join(bot.data_dir, "slaps.json"), encoding="utf-8") as f:
         slaps = json.load(f)
+        
+    with codecs.open(os.path.join(bot.data_dir, "strax.json"), encoding="utf-8") as f:
+        strax = json.load(f)
 
     with codecs.open(os.path.join(bot.data_dir, "north_korea.txt"), encoding="utf-8") as f:
         north_korea = [line.strip() for line in f.readlines() if not line.startswith("//")]
@@ -120,7 +124,7 @@ def kill(text, conn, nick, action):
 
 @asyncio.coroutine
 @hook.command
-def slap(text, action, nick, conn, notice):
+def slap(text, action, nick, conn):
     """<user> -- Makes the bot slap <user>."""
     target = text.strip()
 
@@ -138,6 +142,29 @@ def slap(text, action, nick, conn, notice):
 
     # act out the message
     action(generator.generate_string())
+    
+@hook.command(autohelp=False)
+def strax(text, conn, message, nick):
+    """Strax quote."""
+
+    if text:
+        target = text.strip()
+        if not is_valid(target):
+           return "I can't attack that."
+ 
+        if is_self(conn, target):
+           # user is trying to make the bot attack itself!
+           target = nick 
+        variables = {
+           "user": target
+        }
+
+        generator = textgen.TextGenerator(strax["target_template"], strax["parts"], variables=variables)
+    else:
+        generator = textgen.TextGenerator(strax["template"], strax["parts"])
+
+    # Become Strax
+    message(generator.generate_string())
 
 @hook.command(autohelp=False)
 def nk(chan, message):
