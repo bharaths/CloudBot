@@ -265,6 +265,8 @@ def pizza(text, action):
         return "I can't give a pizza to that user."
 
     generator = textgen.TextGenerator(pizza_data["templates"], pizza_data["parts"], variables={"user": user})
+    # act out the message
+    action(generator.generate_string())
 
 @asyncio.coroutine
 @hook.command
