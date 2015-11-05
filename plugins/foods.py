@@ -77,7 +77,7 @@ def load_foods(bot):
     with codecs.open(os.path.join(bot.data_dir, "dhokla.json"), encoding="utf-8") as dData:
         dhokla_data = json.load(dData)
     
-    with codecs.open(os.path.join(bot.data_dir, "samosa.json"), encoding="utf-8") as dData:
+    with codecs.open(os.path.join(bot.data_dir, "samosa.json"), encoding="utf-8") as sData:
         samosa_data = json.load(sData)
 
     with codecs.open(os.path.join(bot.data_dir, "taco.json"), encoding="utf-8") as f:
