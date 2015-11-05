@@ -66,7 +66,7 @@ def load_foods(bot):
     :type bot: cloudbot.bot.CloudBot
     """
 
-    global sandwich_data, taco_data, coffee_data, noodles_data, muffin_data, tea_data, mirchi_data, dhokla_data, pizza_data, chaat_data, keto_data, beer_data, cheese_data, pancake_data, chicken_data, icecream_data, brekkie_data
+    global sandwich_data, taco_data, coffee_data, noodles_data, muffin_data, tea_data, mirchi_data, dhokla_data, pizza_data, chaat_data, keto_data, beer_data, cheese_data, pancake_data, chicken_data, icecream_data, brekkie_data, samosa_data
 
     with codecs.open(os.path.join(bot.data_dir, "sandwich.json"), encoding="utf-8") as f:
         sandwich_data = json.load(f)
@@ -76,6 +76,9 @@ def load_foods(bot):
         
     with codecs.open(os.path.join(bot.data_dir, "dhokla.json"), encoding="utf-8") as dData:
         dhokla_data = json.load(dData)
+    
+    with codecs.open(os.path.join(bot.data_dir, "samosa.json"), encoding="utf-8") as sData:
+        samosa_data = json.load(sData)
 
     with codecs.open(os.path.join(bot.data_dir, "taco.json"), encoding="utf-8") as f:
         taco_data = json.load(f)
@@ -304,6 +307,24 @@ def dhokla(text, conn, nick, notice, action):
         notice("Invalid username!")
         return
     generator = textgen.TextGenerator(dhokla_data["templates"], dhokla_data["parts"],
+                                      variables={"user": target})
+    # act out the message                                                                                                                                          
+    action(generator.generate_string())
+
+
+@asyncio.coroutine
+@hook.command()
+def samosa(text, conn, nick, notice, action):
+    """<user> - give a tasty samosa to <user>                                                                                                                      
+    :type text: str                                                                                                                                                
+    :type conn: cloudbot.client.Client                                                                                                                             
+    :type nick: str                                                                                                                                                
+    """
+    target = text.strip()
+    if " " in target:
+        notice("Invalid username!")
+        return
+    generator = textgen.TextGenerator(samosa_data["templates"], samosa_data["parts"],
                                       variables={"user": target})
     # act out the message                                                                                                                                          
     action(generator.generate_string())
