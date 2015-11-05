@@ -1,0 +1,53 @@
+{
+  "templates": [
+    "{gives} {user} {flavor} {type} with {condiments} and {sauce}!",
+    "{gives} {user} {flavor} {type} with {condiments}, {condiments}, and {sauce}!",
+    "{gives} {user} {flavor} {type} with {condiments}, {condiments}, {sauce}, and {sauce}!"
+  ],
+  "parts": {
+    "gives": [
+      "hands",
+      "throws",
+      "makes",
+      "passes",
+      "serves"
+    ],
+    "flavor": [
+      "a tasty",
+      "a delicious",
+      "an awesome",
+      "an excellent",
+      "a scrumptious",
+      "a 100% authentic",
+      "a home-made"
+    ],
+    "condiments": [
+      "coriander",
+      "onions",
+      "green chillis",
+      "masala potatoes",
+      "chickpeas",
+      "grilled onions",
+      "mother's love"
+    ],
+    "type": [
+      "samosa",
+      "potato samosa",
+      "crispy potato samosa",
+      "baked potato samosa",
+      "deep-fried potato samosa",
+      "mini samosa",
+      "lamb samosa",
+      "chicken samosa"
+    ],
+    "sauce":[
+      "imli chutney",
+      "coriander chutney",
+      "mint chutney",
+      "mango pickle",
+      "lime pickle",
+      "Kissan tomato ketchup",
+      "date-tamarind chutney"
+    ]
+  }
+}
