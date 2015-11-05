@@ -76,6 +76,9 @@ def load_foods(bot):
         
     with codecs.open(os.path.join(bot.data_dir, "dhokla.json"), encoding="utf-8") as dData:
         dhokla_data = json.load(dData)
+    
+    with codecs.open(os.path.join(bot.data_dir, "samosa.json"), encoding="utf-8") as dData:
+        samosa_data = json.load(sData)
 
     with codecs.open(os.path.join(bot.data_dir, "taco.json"), encoding="utf-8") as f:
         taco_data = json.load(f)
@@ -304,6 +307,24 @@ def dhokla(text, conn, nick, notice, action):
         notice("Invalid username!")
         return
     generator = textgen.TextGenerator(dhokla_data["templates"], dhokla_data["parts"],
+                                      variables={"user": target})
+    # act out the message                                                                                                                                          
+    action(generator.generate_string())
+
+
+@asyncio.coroutine
+@hook.command()
+def samosa(text, conn, nick, notice, action):
+    """<user> - give a tasty samosa to <user>                                                                                                                      
+    :type text: str                                                                                                                                                
+    :type conn: cloudbot.client.Client                                                                                                                             
+    :type nick: str                                                                                                                                                
+    """
+    target = text.strip()
+    if " " in target:
+        notice("Invalid username!")
+        return
+    generator = textgen.TextGenerator(samosa_data["templates"], samosa_data["parts"],
                                       variables={"user": target})
     # act out the message                                                                                                                                          
     action(generator.generate_string())
